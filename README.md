@@ -33,6 +33,7 @@ cp commands/_lookup.md ~/.claude/commands/
 cp commands/_research.md ~/.claude/commands/
 cp commands/_deep-research.md ~/.claude/commands/
 cp commands/_research-team.md ~/.claude/commands/
+cp commands/_deep-research-team.md ~/.claude/commands/
 
 # Skills
 cp skills/researcher.md ~/.claude/skills/
@@ -44,8 +45,9 @@ cp skills/researcher.md ~/.claude/skills/
 |---------|-------------|----------|
 | `/lookup` | Quick single-pass research | Simple factual questions |
 | `/research` | Standard research with report | General research tasks |
-| `/deep-research` | Multi-level exhaustive research | Complex topics requiring depth |
+| `/deep-research` | Multi-level exhaustive research | Complex topics requiring breadth |
 | `/research-team` | Multi-agent with review cycles | High-quality, verified reports |
+| `/deep-research-team` | Exhaustive + verified research | Authoritative, publication-ready |
 
 ## Architecture Comparison
 
@@ -230,6 +232,43 @@ Chief Editor (Claude Code)
 | "Research X and write a report" | `/research` |
 | "I need to understand everything about X" | `/deep-research` |
 | "I need a high-quality, verified report on X" | `/research-team` |
+| "I need exhaustive AND verified research" | `/deep-research-team` |
+
+### `/deep-research-team` — The Full Package
+
+Combines multi-level deep exploration with multi-agent verification. Use for:
+- Academic-quality research
+- Publication-ready reports
+- Complex topics requiring both breadth and rigor
+
+```
+/deep-research-team "Impact of EU AI Act on startups" --quality=academic
+```
+
+**Flow:**
+```
+Phase 0: Build research tree (branches x depth levels)
+    ↓
+Phase 1: Parallel branch research (each agent explores 3 levels deep)
+    ↓
+Phase 2: Cross-branch synthesis + gap analysis
+    ↓
+Phase 3: Draft assembly
+    ↓
+Phase 4: Multi-reviewer cycles (Expert + Structure + Citation reviewers)
+    ↓
+Phase 5: Final publication
+```
+
+**5 Quality Gates:**
+- G0: Research tree defined
+- G1: All branches explored to depth
+- G2: Cross-branch synthesis complete
+- G3: Draft assembled with minimum sources
+- G4: Review score meets threshold
+- G5: Final publication checks passed
+
+**Time:** ~30-45 minutes for high-quality research
 
 ## Extending
 
